@@ -1,6 +1,6 @@
 {
 	"name": "ip2location-io-nodejs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "IP2Location.io Node.js SDK",
 	"keywords": [
 		"ip2location.io",
@@ -15,6 +15,7 @@
 	"files": [
 		"./src/ip2location-io.cjs",
 		"./src/ip2location-io.d.ts",
+		"./src/wrapper.mjs",
 		"./test.cjs",
 		"./test.mjs",
 		"./README.md"
