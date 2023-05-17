@@ -1,6 +1,6 @@
 {
 	"name": "ip2location-io-nodejs",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "IP2Location.io Node.js SDK",
 	"keywords": [
 		"ip2location.io",
@@ -32,7 +32,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ip2location/ip2location-nodejs.git"
+		"url": "https://github.com/ip2location/ip2location-io-nodejs.git"
 	},
 	"devDependencies": {
 		"prettier": "2.4.0"
