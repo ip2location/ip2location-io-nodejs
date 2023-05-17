@@ -16,20 +16,30 @@ let myip = "8.8.8.8";
 let lang = "en"; // language parameter is only available for Plus and Security plans
 
 // Lookup ip address geolocation data
-ipl
-  .lookup(myip, lang)
-  .then((myobj) => console.log(myobj))
-  .catch((err) => console.log(err));
+ipl.lookup(myip, lang)
+  .then((data) => {
+    // print the data in json format
+    console.log(data)
+  })
+  .catch((error) => {
+    // print the error
+    console.log(error)
+  });
 
 let whois = new DomainWhois(config);
 
 let mydomain = "locaproxy.com";
 
 // Lookup domain information
-whois
-  .lookup(mydomain)
-  .then((myobj) => console.log(myobj))
-  .catch((err) => console.log(err));
+whois.lookup(mydomain)
+  .then((data) => {
+    // print the data in json format
+    console.log(data)
+  })
+  .catch((error) => {
+    // print the error
+    console.log(error)
+  });
 
 // Convert normal text to punycode
 console.log(whois.getPunycode("täst.de"));

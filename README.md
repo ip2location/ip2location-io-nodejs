@@ -23,49 +23,59 @@ Usage Example
 ============
 ### Lookup IP Address Geolocation Data
 ```javascript
-import packageMain from "ip2location-io-nodejs";
+import ip2locationio from "ip2location-io-nodejs";
 
 // Configures IP2Location.io API key
 let mykey = "YOUR_API_KEY";
-let config = new packageMain.Configuration(mykey);
+let config = new ip2locationio.Configuration(mykey);
 
-let ipl = new packageMain.IPGeolocation(config);
+let ipl = new ip2locationio.IPGeolocation(config);
 
 let myip = "8.8.8.8";
 let lang = "en"; // language parameter is only available for Plus and Security plans
 
 // Lookup ip address geolocation data
-ipl
-  .lookup(myip, lang)
-  .then((myobj) => console.log(myobj))
-  .catch((err) => console.log(err));
+ipl.lookup(myip, lang)
+  .then((data) => {
+    // print the data in json format
+    console.log(data)
+  })
+  .catch((error) => {
+    // print the error
+    console.log(error)
+  });
 ```
 
 ### Lookup Domain Information
 ```javascript
-import packageMain from "ip2location-io-nodejs";
+import ip2locationio from "ip2location-io-nodejs";
 
 // Configures IP2Location.io API key
 let mykey = "YOUR_API_KEY";
-let config = new packageMain.Configuration(mykey);
+let config = new ip2locationio.Configuration(mykey);
 
-let whois = new packageMain.DomainWhois(config);
+let whois = new ip2locationio.DomainWhois(config);
 
 let mydomain = "locaproxy.com";
 
 // Lookup domain information
-whois
-  .lookup(mydomain)
-  .then((myobj) => console.log(myobj))
-  .catch((err) => console.log(err));
+whois.lookup(mydomain)
+  .then((data) => {
+    // print the data in json format
+    console.log(data)
+  })
+  .catch((error) => {
+    // print the error
+    console.log(error)
+  });
 ```
 
 ### Convert Normal Text to Punycode
 ```javascript
-import packageMain from "ip2location-io-nodejs";
+import ip2locationio from "ip2location-io-nodejs";
 
-let config = new packageMain.Configuration();
-let whois = new packageMain.DomainWhois(config);
+let config = new ip2locationio.Configuration();
+let whois = new ip2locationio.DomainWhois(config);
 
 // Convert normal text to punycode
 console.log(whois.getPunycode("täst.de"));
@@ -73,10 +83,10 @@ console.log(whois.getPunycode("täst.de"));
 
 ### Convert Punycode to Normal Text
 ```javascript
-import packageMain from "ip2location-io-nodejs";
+import ip2locationio from "ip2location-io-nodejs";
 
-let config = new packageMain.Configuration();
-let whois = new packageMain.DomainWhois(config);
+let config = new ip2locationio.Configuration();
+let whois = new ip2locationio.DomainWhois(config);
 
 // Convert punycode to normal text
 console.log(whois.getNormalText("xn--tst-qla.de"));
@@ -84,10 +94,10 @@ console.log(whois.getNormalText("xn--tst-qla.de"));
 
 ### Get Domain Name
 ```javascript
-import packageMain from "ip2location-io-nodejs";
+import ip2locationio from "ip2location-io-nodejs";
 
-let config = new packageMain.Configuration();
-let whois = new packageMain.DomainWhois(config);
+let config = new ip2locationio.Configuration();
+let whois = new ip2locationio.DomainWhois(config);
 
 // Get domain name from URL
 console.log(whois.getDomainName("https://www.example.com/exe"));
@@ -95,10 +105,10 @@ console.log(whois.getDomainName("https://www.example.com/exe"));
 
 ### Get Domain Extension
 ```javascript
-import packageMain from "ip2location-io-nodejs";
+import ip2locationio from "ip2location-io-nodejs";
 
-let config = new packageMain.Configuration();
-let whois = new packageMain.DomainWhois(config);
+let config = new ip2locationio.Configuration();
+let whois = new ip2locationio.DomainWhois(config);
 
 // Get domain extension (gTLD or ccTLD) from URL or domain name
 console.log(whois.getDomainExtension("example.com"));

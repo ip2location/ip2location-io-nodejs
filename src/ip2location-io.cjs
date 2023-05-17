@@ -4,7 +4,7 @@ const punycode = require("punycode/"); // to import userland modules rather than
 
 // Configuration class
 class Configuration {
-  #version = "1.0.0";
+  #version = "1.0.3";
   #apiKey = "";
 
   constructor(key) {
@@ -59,7 +59,17 @@ class IPGeolocation {
       let req = https.get(url, function (res) {
         res.on("data", (chunk) => (d = d + chunk));
         res.on("end", function () {
-          resolve(JSON.parse(d));
+          if (res.statusCode == 200) {
+            resolve(JSON.parse(d));
+          } else if (res.statusCode == 400 || res.statusCode == 401) {
+            if (d.includes("error_message")) {
+              reject(new Error(JSON.parse(d).error.error_message));
+            } else {
+              reject(new Error(d));
+            }
+          } else {
+            reject(new Error(d));
+          }
         });
       });
 
@@ -105,7 +115,17 @@ class DomainWhois {
       let req = https.get(url, function (res) {
         res.on("data", (chunk) => (d = d + chunk));
         res.on("end", function () {
-          resolve(JSON.parse(d));
+          if (res.statusCode == 200) {
+            resolve(JSON.parse(d));
+          } else if (res.statusCode == 400 || res.statusCode == 401) {
+            if (d.includes("error_message")) {
+              reject(new Error(JSON.parse(d).error.error_message));
+            } else {
+              reject(new Error(d));
+            }
+          } else {
+            reject(new Error(d));
+          }
         });
       });
 
