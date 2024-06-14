@@ -108,6 +108,8 @@ Note: This parameter is only available for Plus and Security plan only.
 
 ## DomainWhois Class
 
+**_Please note that this class is no longer being maintained and has been migrated to a new repository. We recommend that you use the [IP2WHOIS Node.js SDK](https://github.com/ip2whois/ip2whois-nodejs) going forward._**
+
 ```{py:class} DomainWhois(config)
 Initialize the DomainWhois class.
 
