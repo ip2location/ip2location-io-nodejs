@@ -80,3 +80,20 @@ export class DomainWhois {
     getDomainExtension(str: any): any;
     #private;
 }
+export class HostedDomain {
+    /**
+     * Reads and stores the Configuration object.
+     *
+     * @param key The Configuration object.
+     */
+    constructor(config: any);
+    /**
+     * Returns the object containing the hosted domain data.
+     *
+     * @param myIP The IP address to query.
+     * @param page Pagination result of the hosted domains. If unspecified, 1st page will be used.
+     * @returns The hosted domain data.
+     */
+    lookup(myIP: any, page: any): Promise<any>;
+    #private;
+}

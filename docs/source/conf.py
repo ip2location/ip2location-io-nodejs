@@ -6,7 +6,7 @@
 # -- Project information
 
 project = 'IP2Location.io Node.js SDK'
-copyright = '2024, IP2Location'
+copyright = '2025, IP2Location'
 author = 'IP2Location'
 
 release = '1.0.0'
@@ -43,7 +43,7 @@ myst_enable_extensions = [
 # https://myst-parser.readthedocs.io/en/latest/configuration.html#setting-html-metadata
 myst_html_meta = {
     "description": "IP2Location.io Node.js SDK allows user to query for an enriched data set based on IP address and provides WHOIS lookup api that helps users to obtain domain information.",
-    "keywords": "IP2Location, Geolocation, IP location, Node.js, WHOIS, domain",
+    "keywords": "IP2Location, Geolocation, IP location, Node.js, WHOIS, domain, hosted domain",
     "google-site-verification": "DeW6mXDyMnMt4i61ZJBNuoADPimo5266DKob7Z7d6i4",
 }
 
@@ -72,4 +72,4 @@ html_favicon = 'images/favicon-32x32.png'
 
 html_title = "IP2Location.io Node.js SDK"
 
-# html_baseurl = "https://ip2location-io-php.readthedocs.io/en/latest/"
+# html_baseurl = "https://ip2location-io-nodejs.readthedocs.io/en/latest/"

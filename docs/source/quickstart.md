@@ -123,3 +123,30 @@ let whois = new ip2locationio.DomainWhois(config);
 // Get domain extension (gTLD or ccTLD) from URL or domain name
 console.log(whois.getDomainExtension("example.com"));
 ```
+
+### Get Hosted Domain List
+
+You can get the domains hosted within the IP using following codes:
+
+```javascript
+import ip2locationio from "ip2location-io-nodejs";
+
+// Configures IP2Location.io API key
+let mykey = "YOUR_API_KEY";
+let config = new ip2locationio.Configuration(mykey);
+
+let hd = new ip2locationio.HostedDomain(config);
+
+let myip = "8.8.8.8";
+
+// Lookup ip address hosted domain data
+hd.lookup(myip)
+  .then((data) => {
+    // print the data in json format
+    console.log(data)
+  })
+  .catch((error) => {
+    // print the error
+    console.log(error)
+  });
+```

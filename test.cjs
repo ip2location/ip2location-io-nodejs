@@ -4,6 +4,7 @@ const {
   Configuration,
   IPGeolocation,
   DomainWhois,
+  HostedDomain,
 } = require("ip2location-io-nodejs");
 
 let mykey = "YOUR_API_KEY";
@@ -52,3 +53,19 @@ console.log(whois.getDomainName("https://www.example.com/exe"));
 
 // Get domain extension (gTLD or ccTLD) from URL or domain name
 console.log(whois.getDomainExtension("example.com"));
+
+// Lookup hosted domain information
+let hd = new HostedDomain(config);
+
+let myip2 = "8.8.8.8";
+
+// Lookup ip address hosted domain data
+hd.lookup(myip2)
+  .then((data) => {
+    // print the data in json format
+    console.log(data)
+  })
+  .catch((error) => {
+    // print the error
+    console.log(error)
+  });
