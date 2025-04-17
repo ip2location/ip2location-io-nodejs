@@ -9,6 +9,7 @@ In addition, this module provides WHOIS lookup api that helps users to obtain do
 
 There is also a Hosted Domain API that allowing users to get the list of hosted domain names by IP address in real time. The REST API supports both IPv4 and IPv6 address lookup.
 
+This module requires API key to function. You may sign up for a free API key at https://www.ip2location.io/pricing.
 
 ## Table of contents
  ```{eval-rst}
