@@ -24,8 +24,13 @@
 	"main": "./src/ip2location-io.cjs",
 	"exports": {
 		".": {
-			"import": "./src/wrapper.mjs",
-			"require": "./src/ip2location-io.cjs"
+			"import": {
+				"types": "./src/ip2location-io.d.ts",
+				"default": "./src/wrapper.mjs"
+			},
+			"require": {
+				"default": "./src/ip2location-io.cjs"
+			}
 		}
 	},
 	"types": "src/ip2location-io.d.ts",
