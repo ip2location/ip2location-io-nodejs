@@ -6,11 +6,11 @@
 # -- Project information
 
 project = 'IP2Location.io Node.js SDK'
-copyright = '2025, IP2Location'
+copyright = '2026, IP2Location'
 author = 'IP2Location'
 
-release = '1.0.0'
-version = '1.0.0'
+release = '1.1.2'
+version = '1.1.2'
 
 # -- General configuration
 

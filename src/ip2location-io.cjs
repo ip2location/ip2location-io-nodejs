@@ -4,7 +4,7 @@ const punycode = require("punycode/"); // to import userland modules rather than
 
 // Configuration class
 class Configuration {
-  #version = "1.1.1";
+  #version = "1.1.2";
   #apiKey = "";
 
   constructor(key) {
