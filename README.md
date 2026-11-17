@@ -230,11 +230,13 @@ Do not commit API keys or expose them in client-side JavaScript. This SDK should
 
 ## Related IP2Location products
 
-- **[IP2Location.io API](https://www.ip2location.io/):** Hosted IP geolocation and IP intelligence APIs.
-- **[IP2Location LITE](https://www.ip2location.com/database/lite):** Free downloadable databases for local IP geolocation use.
-- **[IP2Location Database](https://www.ip2location.com/database/ip2location):** Commercial offline geolocation databases.
-- **[IP2Proxy](https://www.ip2location.com/database/ip2proxy):** Proxy, VPN, Tor, and anonymizer intelligence.
-- **[IP2WHOIS](https://www.ip2whois.com/):** Dedicated domain WHOIS API and SDKs.
+| Product | Purpose |
+|---|---|
+| [IP2Location.io](https://www.ip2location.io/) | Hosted IP geolocation, ASN, and network intelligence APIs. |
+| [IP2Location LITE](https://www.ip2location.com/lite) | Free downloadable IP geolocation and ASN databases for offline use. |
+| [IP2Location Database](https://www.ip2location.com/database/ip2location) | Commercial offline IP geolocation databases. |
+| [IP2Proxy](https://www.ip2location.com/database/proxy) | IP proxy, VPN, TOR and anonymizer intelligence. |
+| [IP2WHOIS](https://www.ip2whois.com/) | Domain WHOIS lookup services. |
 
 ## Accuracy and responsible use
 
