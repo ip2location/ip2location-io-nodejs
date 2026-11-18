@@ -9,8 +9,8 @@ project = 'IP2Location.io Node.js SDK'
 copyright = '2026, IP2Location'
 author = 'IP2Location'
 
-release = '1.1.2'
-version = '1.1.2'
+release = '1.1.3'
+version = '1.1.3'
 
 # -- General configuration
 

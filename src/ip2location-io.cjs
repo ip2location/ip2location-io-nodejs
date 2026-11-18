@@ -4,7 +4,7 @@ const punycode = require("punycode/"); // to import userland modules rather than
 
 // Configuration class
 class Configuration {
-  #version = "1.1.2";
+  #version = "1.1.3";
   #apiKey = "";
 
   constructor(key) {
@@ -2076,22 +2076,31 @@ class HostedDomain {
 
     const lookupPromise = new Promise((resolve, reject) => {
       let d = "";
-      let req = https.get(url, function (res) {
-        res.on("data", (chunk) => (d = d + chunk));
-        res.on("end", function () {
-          if (res.statusCode == 200) {
-            resolve(JSON.parse(d));
-          } else if (res.statusCode == 400 || res.statusCode == 401) {
-            if (d.includes("error_message")) {
-              reject(new Error(JSON.parse(d).error.error_message));
+      let req = https.get(
+        url,
+        {
+          headers: {
+            "User-Agent":
+              "IP2Location.io-NodeJS-SDK/" + this.#configuration.getVersion(),
+          },
+        },
+        function (res) {
+          res.on("data", (chunk) => (d = d + chunk));
+          res.on("end", function () {
+            if (res.statusCode == 200) {
+              resolve(JSON.parse(d));
+            } else if (res.statusCode == 400 || res.statusCode == 401) {
+              if (d.includes("error_message")) {
+                reject(new Error(JSON.parse(d).error.error_message));
+              } else {
+                reject(new Error(d));
+              }
             } else {
               reject(new Error(d));
             }
-          } else {
-            reject(new Error(d));
-          }
-        });
-      });
+          });
+        }
+      );
 
       req.on("error", function (e) {
         reject(new Error(e));
